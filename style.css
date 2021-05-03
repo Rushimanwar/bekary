@@ -1,5 +1,9 @@
+/*  import google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+
+
 *{
-    margin: 0;padding: 0;box-sizing: border-box;font-family: sans-serif;
+    margin: 0;padding: 0;box-sizing: border-box;font-family: 'poppins', sans-serif; 
 }
 body{
     overflow-x: hidden;
@@ -12,7 +16,8 @@ body{
 .flex{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 /* scrollbar */
 ::-webkit-scrollbar{
@@ -47,7 +52,71 @@ header{
     text-align: center;
     font-size: 20px;position: fixed;
     z-index: 1;
+    filter: drop-shadow(1px 2px 5px rgba(0,0,0,.5));
 }
+header span1{
+    display: none;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    height: 2px;width: 20px;
+    background-color: blue;
+    z-index: 100;
+}
+header span1::before{
+    content: "";
+    position: absolute;
+    left: 0;top: -5px;
+    right: 20px;
+    width: 20px;
+    height: 2px;
+    z-index: 100;
+    background-color: blue;
+}
+
+.menu{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+span1::after{
+    content: "";
+    position: absolute;
+    left: 0;top: 5px;
+    width: 20px;
+    height: 2px;
+    background-color: blue;
+}
+span2{
+    position:absolute;
+    display: none;
+    right: 20px;
+    top: 10px;
+    height: 0px;width: 20px;
+    background-color: red;
+}
+span2::before{
+    content: "";
+    position: absolute;
+    left: 0;top: 10px;
+    transform: rotate(45deg);
+    width: 20px;
+    height: 2px;
+    background-color: red;
+    z-index: 10;
+}
+span2::after{
+    content: "";
+    position: absolute;
+    left: 0;top: 10px;
+    width: 20px;
+    height: 2px;
+    z-index: 10;
+    transform: rotate(135deg);
+    background-color: red;
+}
+
 .logo h4{
     margin-top: -10px;
     font-size: 25px;
@@ -64,20 +133,26 @@ header{
 }
 @keyframes roted {
     0%{
-        color: blue;
+        color: rgb(0, 68, 255);
     }
     25%{
-        color: yellow;
+        color: rgb(238, 250, 74);
     }
     50% {
-        color: green;
+        color: rgb(14, 241, 14);
     }
     75% {
-        color: blueviolet;
+        color: rgb(165, 83, 241);
     }
     100% {
         color: blue;
     }
+}
+header nav{
+    display: flex;
+    flex-wrap: wrap;
+    display: block;
+    flex-direction: row;
 }
 header nav li{
     list-style-type: none;
@@ -89,13 +164,12 @@ header nav li a{
     font-weight: bold;
     margin: 10px 10px;
     cursor: pointer;
-    color:orangered;
+    color:#fff;
     border-bottom: 2px solid transparent;
     transition: all .3s ease-in-out;
 }
 header nav li a:hover{
     color: rgb(243, 12, 243);
-    border-bottom: 2px solid blueviolet;
 }
 header nav li a:active{
     color: #fff;
@@ -157,6 +231,8 @@ header nav li a:active{
 }
 .about .info{
     padding: 30px 0;
+    justify-content: space-between;
+    flex-direction: row;
 }
 .about .info .s1{
     width: 50%;
@@ -187,10 +263,14 @@ header nav li a:active{
     border-bottom: 2px solid #fff;
     border-spacing: 10px;
 }
+.about .info .s2{
+    width: 40%;
+    height: 60vh;
+}
 .about .info .s2 img{
-    width: 380px;
-    height: 380px;
-    transform: scale(1.05);
+    width: 350px;
+    height: 350px;
+    transform: scaleY(1);
 }
 
 /* services */
@@ -201,12 +281,19 @@ header nav li a:active{
 
 }
 .services .box{
+    width: 100%;
     margin-top: 40px;
+    display: inline-flex;
+    
+    justify-content: space-around;
 }
 .services .box-2{
-    padding: 60px 0;
+    width: 100%;
+    padding: 60px;
     margin-top: -40px;
-    display: inline-flex;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
     border-radius: 10px;
     background-color: #fff;
     box-shadow: 1px 2px 4px rgba(0,0,0,0.5);
@@ -215,7 +302,7 @@ header nav li a:active{
     position: absolute;
     margin-top: -50px;
     font-size: 30px;
-    left: 40%;
+    /* left: 40%; */
     text-align: center;
     font-family: French Script MT;
     color: purple;
@@ -224,20 +311,25 @@ header nav li a:active{
     color: purple;
 }
 .services .box .card{
-    max-width: 30%;
+    width: 270px; 
     margin: 0px;
-    padding: 10px;
-    border-radius: 7px;}
+    padding:20px 10px;
+    border-radius: 7px;
+    text-align: center;
+}
 
 .services .box-2 .card{
-    max-width: 30%;
-    margin: 0px;
-    padding: 20px 10px;
-    border-radius: 7px;}
+    width: 270px;
+    margin: 20px 0;
+    padding: 20px 0;
+    border-radius: 7px;
+    justify-content: center;
+    text-align: center;
+}
     
 .card .img{
     width: 100%;
-    height: 50%;
+    height: 210px;
     padding: 20px 0;
     margin-bottom: 10px;
     justify-content: center;
@@ -326,6 +418,9 @@ header nav li a:active{
 .contact{
     padding: 20px 0;
 }
+.contact .container{
+    justify-content: space-between;
+}
 .contact .office{
     padding: 10px 0;
 }
@@ -339,9 +434,12 @@ header nav li a:active{
 .office ul{
     padding: 10px 0;
 }
+.office ul li i{
+    padding:0 10px;
+}
 .office ul li{
     list-style: none;
-    padding: 5px 0;
+    padding: 5px ;
     color: blue;
 }
 .contact-us{
@@ -357,9 +455,11 @@ header nav li a:active{
 }
 form .name{
     padding: 10px 0;
+    justify-content: space-between;
 } input{
     width: 250px;
     height: 35px;
+    margin-top: 20px ;
     padding: 0 10px ;
     border-radius: 7px;
     border: 1px solid blue;
@@ -368,17 +468,20 @@ form .name{
     color: blue;
 }
 .subject{
+    width: 100%;
     padding: 5px 0;
     position:relative;
     display: flex;
     flex-direction: column;
 }
 .subject input{
+    margin: 10px 0;
+    padding: 10px ;
     width: 100%;
 }
 textarea{
     width: 100%;
-    height: 120px;
+    height: 100px;
     margin: 10px 0;
     padding: 10px;
     resize: none;
@@ -405,6 +508,9 @@ footer .foot{
     padding: 5px 0;
     border-bottom: 2px dotted blue;
     line-height: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 footer h1{
     margin-top: 0px;
@@ -436,6 +542,11 @@ footer .c h3{
     font-size: 15px;
     font-weight: 350;
 }
+.copy{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
 .copy h4{
     color: #fff;
     text-transform: capitalize;
@@ -448,4 +559,225 @@ footer .c h3{
     font-size: 20px;
 
     font-family: Brush Script MT;
+}
+
+/* @media screen and (max-width:860px){
+    nav{
+        visibility: hidden;
+        display: none;
+        background-color: blue;
+    }
+} */
+@media (max-width:980px){
+    header .logo h4{
+        font-size: 20px;
+        margin-top: 5px;
+        margin-left: 0px;
+    }
+    
+.logo h4::first-letter{
+    font-size: 27px;
+}
+
+    header span1{
+        display: block;
+    }
+    .border1{
+        display: none;
+    }
+    .border2{
+        display: none;
+    }
+    .border{
+        display: none;
+    }
+
+     .nav {
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        padding: 40px 0;
+        top: 0;
+        left: 0; 
+        flex-direction: column;
+        background-color: #333;
+        display: none;
+    }
+    .nav li{
+        width: 100%;
+        height: 20px;
+        padding: 40px 0;
+}
+.home .main .s1{
+    width: 60%;
+    float: left;
+    
+}
+.home .main .s1 h5{
+    position: absolute;
+    margin-top: 50vh;
+    margin-left: 20vw;
+    padding: 0;
+    width: 60%;
+    font-size:10vw;
+    
+}
+.home .main .s1{
+    width: 60%;
+    float: left;
+    
+}
+.home .main .s1 h3{
+    position: absolute;
+    margin-top: 45vh;
+    margin-left: 20vw;
+    padding: 0;
+
+    width: 60%;
+    font-size:8vw;
+    
+}
+.home .main .s1 h1{
+    position: absolute;
+    margin-top: 55vh;
+    margin-left: 20vw;
+    padding: 0;
+
+    width: 60%;
+    font-size:15vw;
+    
+}
+.about .info {
+    width: 100%;
+    flex-direction: column-reverse;
+}
+.about .info .s2{
+    width: 100%;
+    flex-direction: column-reverse;
+}
+.about .info .s2 .img img{
+    width: 350px;
+    height: 350px;
+    flex-direction: column-reverse;
+}
+.about .info .s3{
+    width: 100%;
+    flex-direction: column-reverse;
+}
+
+/* contact */
+ .contact-us{
+     width: 100%;
+ }
+ .contact-us .office{
+     left: 0;
+ }
+ .contact-us .form form{
+     width: 100%;
+ }
+ .contact-us .form input{
+     width: 100%;
+ }
+ .contact-us .form form .subject input{
+     width: 100%;
+ }
+.foot{
+    justify-content: space-between;
+}
+}
+
+@media (max-width:770px){
+    header .logo h4{
+        font-size: 20px;
+        margin-top: 0px;
+        margin-left: 0px;
+    }
+    
+.logo h4::first-letter{
+    font-size: 25px;
+}
+
+    header span1{
+        display: block;
+    }
+    .border1{
+        display: none;
+    }
+    .border2{
+        display: none;
+    }
+    .border{
+        display: none;
+    }
+
+     .nav {
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        padding: 40px 0;
+        top: 0;
+        left: 0; 
+        flex-direction: column;
+        background-color: #333;
+        display: none;
+    }
+     .nav li{
+        width: 100%;
+        height: 20px;
+        margin: 20px;
+        padding: 40px 0;
+}
+.home .main .s1{
+    width: 60%;
+    float: left;
+    
+}
+.home .main .s1 h5{
+    position: absolute;
+    margin-top: 50vh;
+    margin-left: 20vw;
+    padding: 0;
+
+    width: 60%;
+    font-size:10vw;
+    
+}
+.about .info{
+    justify-content: center;
+    text-align: center;
+    flex-direction: column-reverse;
+}
+.about .info .s1 {
+    width: 100%;
+    padding: 0 10px;
+    text-align: justify;
+
+}
+.about .info .s1 p{
+    width: 100%;
+    text-align: justify;
+
+}
+.about .info .s2{
+    padding: 0;margin: 0;
+    width: 100%;
+    text-align: center;
+}
+.about .info .s2 img{
+    width: 300px;
+    height: 300px;
+    transform: scale(1);
+}
+.about .info .s2 .img img{
+    width: 300px;
+    height: 300px;
+    flex-direction: column-reverse;
+}
+
+.about .info .s3 p{
+    margin-top: 30px;
+    font-size: 13px;
+    line-height: 27px;
+    text-align: left;
+}
 }
