@@ -1,6 +1,6 @@
 /*  import google fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
 *{
     margin: 0;padding: 0;box-sizing: border-box;font-family: 'poppins', sans-serif; 
@@ -121,7 +121,7 @@ span2::after{
     margin-top: -10px;
     font-size: 25px;
     letter-spacing: 2px;
-    font-family: Brush Script MT;
+    font-family: 'Pacifico', cursive;
     font-style: oblique;
     animation: roted 2s linear infinite;
 }
@@ -187,23 +187,22 @@ header nav li a:active{
     padding-top: 17rem;
     padding-left: 38rem;
     color: purple;
-    font-family: French Script MT;
+    font-family: 'Pacifico', cursive;
 }
 .home .s1 h1{
     font-size: 5rem;
     padding-top: 22rem;
     padding-left: 43rem;
     color: purple;
-    font-family: French Script MT;
+    font-family: 'Pacifico', cursive;
 }
 .home .s1 h3{
     position: absolute;
     font-size: 3rem;
     padding-top: 18rem;
     padding-left: 38rem;
-    color: #fff
-    ;
-    font-family: French Script MT;
+    color: #fff;
+    font-family: 'Pacifico', cursive;
 }
 /* about */
 .about{
@@ -227,7 +226,7 @@ header nav li a:active{
     font-weight: bold;
     padding-bottom:10px;
     text-transform: capitalize;
-    font-family: French Script MT;
+    font-family: 'Pacifico', cursive;
 }
 .about .info{
     padding: 30px 0;
@@ -304,7 +303,7 @@ header nav li a:active{
     font-size: 30px;
     /* left: 40%; */
     text-align: center;
-    font-family: French Script MT;
+    font-family: 'Pacifico', cursive;
     color: purple;
 }
 .services h2{
@@ -359,7 +358,7 @@ header nav li a:active{
 }
 .card .name h2{
     color: purple;
-    font-family: French Script MT;
+    font-family: 'Pacifico', cursive;
     filter: drop-shadow(1px 2px 4px rgba(0,0,0,0.2));
     font-size: 50px;
     text-transform:capitalize;
@@ -429,7 +428,7 @@ header nav li a:active{
     font-size: 45px;
     text-transform: capitalize;
     color: blueviolet;
-    font-family: French Script MT;
+    font-family: 'Pacifico', cursive;
 }
 .office ul{
     padding: 10px 0;
@@ -451,7 +450,7 @@ header nav li a:active{
     font-size: 45px;
     text-transform: capitalize;
     padding: 10px 0;
-    font-family: French Script MT;
+    font-family: 'Pacifico', cursive;
 }
 form .name{
     padding: 10px 0;
@@ -516,7 +515,7 @@ footer h1{
     margin-top: 0px;
     padding: 15px 0;
     color: blue;
-    font-family: French Script MT;
+    font-family: 'Pacifico', cursive;
 }
 footer h5{
     font-size: 15px;
@@ -558,7 +557,7 @@ footer .c h3{
     color: blue;
     font-size: 20px;
 
-    font-family: Brush Script MT;
+    font-family: 'Pacifico', cursive;
 }
 
 /* @media screen and (max-width:860px){
